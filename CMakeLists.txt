@@ -61,6 +61,8 @@ endif()
 
 list(APPEND CMAKE_MODULE_PATH "${GLFW_SOURCE_DIR}/CMake/modules")
 
+include(ExternalProject)
+
 find_package(Threads REQUIRED)
 
 if (GLFW_BUILD_DOCS)
@@ -227,13 +229,13 @@ if (_GLFW_WAYLAND)
     list(APPEND glfw_INCLUDE_DIRS "${Wayland_INCLUDE_DIRS}")
     list(APPEND glfw_LIBRARIES "${Wayland_LINK_LIBRARIES}")
 
-    if (GLFW_USE_LIBDECOR)
-        pkg_check_modules(libdecor REQUIRED libdecor-0.1)
-        list(APPEND glfw_PKG_DEPS "libdecor-0.1")
-        list(APPEND glfw_INCLUDE_DIRS "${libdecor_INCLUDE_DIRS}")
-        list(APPEND glfw_LIBRARIES "${libdecor_LINK_LIBRARIES}")
-        add_definitions(-DWITH_DECORATION)
-    endif()
+#    if (GLFW_USE_LIBDECOR)
+#        pkg_check_modules(libdecor REQUIRED libdecor-0.1)
+#        list(APPEND glfw_PKG_DEPS "libdecor-0.1")
+#        list(APPEND glfw_INCLUDE_DIRS "${libdecor_INCLUDE_DIRS}")
+#        list(APPEND glfw_LIBRARIES "${libdecor_LINK_LIBRARIES}")
+#        add_definitions(-DWITH_DECORATION)
+#    endif()
 
     include(CheckIncludeFiles)
     include(CheckFunctionExists)
