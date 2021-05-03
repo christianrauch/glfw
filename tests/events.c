@@ -586,6 +586,7 @@ int main(int argc, char** argv)
         width  = 640;
         height = 480;
     }
+    glfwWindowHint(GLFW_ALPHA_BITS, 0);
 
     slots = calloc(count, sizeof(Slot));
 

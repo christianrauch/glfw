@@ -368,6 +368,7 @@ int main(void)
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    glfwWindowHint(GLFW_ALPHA_BITS, 0);
 
     window = glfwCreateWindow(640, 480, "Cursor Test", NULL, NULL);
     if (!window)

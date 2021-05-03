@@ -314,6 +314,7 @@ int main(int argc, char *argv[])
 
     glfwWindowHint(GLFW_DEPTH_BITS, 16);
     glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
+    glfwWindowHint(GLFW_ALPHA_BITS, 0);
 
     window = glfwCreateWindow( 300, 300, "Gears", NULL, NULL );
     if (!window)
